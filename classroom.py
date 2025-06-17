@@ -31,7 +31,7 @@ class Classroom:
     def link_classrooms(self, classroom_to_link, direction):
         """Populates dictionary of linked classrooms"""
         self.linked_classroom[direction] = classroom_to_link
-        #print(self.name + "linked caves:" + repr(self.linked_caves))
+        #print(self.name + " linked classrooms:" + repr(self.linked_classroom))
 
     def get_details(self):
         """Gets the classroom details"""

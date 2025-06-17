@@ -4,3 +4,7 @@ I also made all the rooms that i need for the game it took basically the whole l
 i do not know why my code is broken i am quite angry with it as well as scared because i dont want to waste time if what im doing doesnt work at all
 My brain also was super clouded when linking the caves and i almost did east and west backwards but i pasted a compass in the sheets so that i knew the correct direction
 I also added the hallway as a room just so it makes more sense for the people
+17/06/2025 - I went through all my code attempting to understand everything, this lesson i went through and fixed all my linking stuff
+I added the miss earl character as the wumpus. Some annoying things were when i did all the linking and it was actually not correct
+So then i spent the remainder of the lesson fixing everything and being sad but it gave me ideas. Im also glad that my code now works
+My idea includes making more charcters like goodies, potential item drops and possibly a quest giver. Bradley gave me and idea for an inventory.

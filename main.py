@@ -1,6 +1,6 @@
 """The main program for Setup for CAPA Showcase"""
+from character import Enemy
 from classroom import Classroom
-
 
 #CAPA
 top_quad = Classroom("Top Quad")
@@ -78,18 +78,40 @@ earl_car.set_description("A place where kids are sent but never return")
 white_car = Classroom("Mr whites car")
 white_car.set_description("Nothing actually happens here.")
 
-top_quad.link_classrooms(Classroom, "North")
-h9.link_classrooms(Classroom, "East")
-h10.link_classrooms(Classroom, "East")
-art_storeroom.link_classrooms(Classroom, "East")
-h11.link_classrooms(Classroom, "East")
-staffroom.link_classrooms(Classroom, "East")
-hallway.link_classrooms(Classroom, "East")
-h12.link_classrooms(Classroom, "North")
-middle_room.link_classrooms(Classroom, "East")
-h14.link_classrooms(Classroom, "South")
-music_store_room.link_classrooms(Classroom, "South")
-h15.link_classrooms(Classroom, "East")
+#CAPA
+top_quad.link_classrooms(h9, "North")
+h9.link_classrooms(top_quad, "South")
+h9.link_classrooms(h10, "East")
+h10.link_classrooms(h9, "West")
+h10.link_classrooms(art_storeroom, "East")
+art_storeroom.link_classrooms(h10, "West")
+art_storeroom.link_classrooms(h11, "East")
+h11.link_classrooms(art_storeroom, "West")
+h11.link_classrooms(staffroom, "East")
+staffroom.link_classrooms(hallway, "East")
+staffroom.link_classrooms(h11, "West")
+hallway.link_classrooms(h12, "North")
+hallway.link_classrooms(middle_room, "East")
+hallway.link_classrooms(h12, "North")
+hallway.link_classrooms(h14, "South")
+h14.link_classrooms(hallway, "North")
+h14.link_classrooms(music_store_room, "South")
+music_store_room.link_classrooms(h15, "South")
+music_store_room.link_classrooms(h14, "North")
+h15.link_classrooms(music_store_room, "North")
+
+#HALL
+hall_entrance.link_classrooms(Classroom, "North")
+floor.link_classrooms(Classroom, "North")
+stage.link_classrooms(Classroom, "North")
+stage_right.link_classrooms(Classroom, "West")
+top_stage.link_classrooms(Classroom, "North")
+stage_left.link_classrooms(Classroom, "East")
+
+miss_earl = Enemy("Miss Earl", "A Scary Intimidating and Strict teacher")
+miss_earl.set_conversation("Hello Student what are you trying to do")
+miss_earl.set_weakness("Tall shelf")
+h10.set_character(miss_earl)
 
 current_classroom = top_quad
 DEAD = False
@@ -104,7 +126,7 @@ while DEAD is False:
         current_classroom = current_classroom.move(command)
     elif command == "Talk":
         if inhabited is not None:
-            #inhabited.talk()
+            inhabited.talk()
     elif command == "Fight":
         if inhabited is not None and isinstance(inhabited, Enemy):
             fight_with = input("What do you want to fight with?")
