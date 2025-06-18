@@ -1,6 +1,12 @@
 """The main program for Setup for CAPA Showcase"""
 from character import Enemy
+from character import Npc
 from classroom import Classroom
+import os
+
+def clear_console():
+    """Clears console"""
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 #CAPA
 top_quad = Classroom("Top Quad")
@@ -112,6 +118,10 @@ miss_earl = Enemy("Miss Earl", "A Scary Intimidating and Strict teacher")
 miss_earl.set_conversation("Hello Student what are you trying to do")
 miss_earl.set_weakness("Tall shelf")
 h10.set_character(miss_earl)
+
+mr_cole = Npc("Mr cole", "A teacher who guides students through the art of entertainment")
+mr_cole.set_conversation("Hello Student are you working hard or hardly working")
+h15.set_character(mr_cole)
 
 current_classroom = top_quad
 DEAD = False

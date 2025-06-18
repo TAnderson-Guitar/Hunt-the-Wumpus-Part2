@@ -8,3 +8,5 @@ I also added the hallway as a room just so it makes more sense for the people
 I added the miss earl character as the wumpus. Some annoying things were when i did all the linking and it was actually not correct
 So then i spent the remainder of the lesson fixing everything and being sad but it gave me ideas. Im also glad that my code now works
 My idea includes making more charcters like goodies, potential item drops and possibly a quest giver. Bradley gave me and idea for an inventory.
+18/06/2025 - i added the clear console command, i also made the npc sub class for quest and i added the mr cole as a character
+it was also really confusing when making it because i couldnt remember what actually to do

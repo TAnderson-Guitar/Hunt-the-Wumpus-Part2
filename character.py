@@ -50,3 +50,17 @@ class Enemy(Character):
         else:
             print(self.name + " swallows you whole! You died.")
             return False
+
+class Npc(Character):
+    """Defines attributes and methods for NPC objects"""
+    def __init__(self, char_name, char_description):
+        super().__init__(char_name, char_description)
+        self.quest = None
+
+    def set_quest(self, npc_quest):
+        """Sets the quest for the npcs"""
+        self.quest = npc_quest
+
+    def get_quest(self):
+        """Gets the quest from the npcs"""
+        return self.quest
