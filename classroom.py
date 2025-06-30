@@ -56,3 +56,70 @@ class Classroom:
     def get_character(self):
         """Returns thename of character object in this cave"""
         return self.character
+
+    def if____statement(self):
+        print("""
+                def if_statement(self, if__statement):
+                    Big brain code that is very useful
+                    if if__statement == if___statement:
+                        if___statement = if__statement
+                        if if__statement == if___statement:
+                            if___statement = if__statement
+                            if if__statement == if___statement:
+                                if___statement = if__statement
+                                if if__statement == if___statement:
+                                    if___statement = if__statement
+                                    if if__statement == if___statement:
+                                        if___statement = if__statement
+                                        if if__statement == if___statement:
+                                            if___statement = if__statement
+                                            if if__statement == if___statement:
+                                                if if__statement == if___statement:
+                                                    if if__statement == if___statement:
+                                                        if if__statement == if___statement:
+                                                            if if__statement == if___statement:
+                                                                if if__statement == if___statement:
+                                                                    if if__statement == if___statement:
+                                                                        if if__statement == if___statement:
+                                                                            if if__statement == if___statement:
+                                                                                if if__statement == if___statement:
+                                                                                    if if__statement == if___statement:
+                                                                                        if if__statement == if___statement:
+                                                                                            if if__statement == if___statement:
+                                                                                                if if__statement == if___statement:
+                                                                                                    if if__statement == if___statement:
+                                                                                                        if if__statement == if___statement:
+                                                                                                            if if__statement == if___statement:
+                                                                                                                if if__statement == if___statement:
+                                                                                                                    if if__statement == if___statement:
+                                                                                                                        if if__statement == if___statement:
+                                                                                                                            if if__statement == if___statement:
+                                                                                                                                if if__statement == if___statement:
+                                                                                                                                    if if__statement == if___statement:
+                                                                                                                                        if if__statement == if___statement:
+                                                                                                                                            if if__statement == if___statement:
+                                                                                                                                                if if__statement == if___statement:
+                                                                                                                                                    if if__statement == if___statement:
+                                                                                                                                                        if if__statement == if___statement:
+                                                                                                                                                            if if__statement == if___statement:
+                                                                                                                                                                if if__statement == if___statement:
+                                                                                                                                                                    if if__statement == if___statement:
+                                                                                                                                                                        if if__statement == if___statement:
+                                                                                                                                                                            if if__statement == if___statement:
+                                                                                                                                                                                if if__statement == if___statement:
+                                                                                                                                                                                    if if__statement == if___statement:
+                                                                                                                                                                                        if if__statement == if___statement:
+                                                                                                                                                                                            if if__statement == if___statement:
+                                                                                                                                                                                                if if__statement == if___statement:
+                                                                                                                                                                                                    if if__statement == if___statement:
+                                                                                                                                                                                                        if if__statement == if___statement:
+                                                                                                                                                                                                            if if__statement == if___statement:
+                                                                                                                                                                                                                if if__statement == if___statement:
+                                                                                                                                                                                                                    if if__statement == if___statement:
+                                                                                                                                                                                                                        if if__statement == if___statement:
+                                                                                                                                                                                                                            if__statement == if___statement
+
+                    
+                    else:
+                        if___statement = if__statement 
+            """)
