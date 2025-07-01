@@ -8,73 +8,6 @@ def clear_console():
     """Clears console"""
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def if____statement():
-        print("""
-
-        def if_statement(self, if__statement):
-            Big brain code that is very useful
-            if if__statement == if___statement:
-                if___statement = if__statement
-                if if__statement == if___statement:
-                    if___statement = if__statement
-                    if if__statement == if___statement:
-                        if___statement = if__statement
-                        if if__statement == if___statement:
-                            if___statement = if__statement
-                            if if__statement == if___statement:
-                                if___statement = if__statement
-                                if if__statement == if___statement:
-                                    if___statement = if__statement
-                                    if if__statement == if___statement:
-                                        if if__statement == if___statement:
-                                            if if__statement == if___statement:
-                                                if if__statement == if___statement:
-                                                    if if__statement == if___statement:
-                                                        if if__statement == if___statement:
-                                                            if if__statement == if___statement:
-                                                                if if__statement == if___statement:
-                                                                    if if__statement == if___statement:
-                                                                        if if__statement == if___statement:
-                                                                            if if__statement == if___statement:
-                                                                                if if__statement == if___statement:
-                                                                                    if if__statement == if___statement:
-                                                                                        if if__statement == if___statement:
-                                                                                            if if__statement == if___statement:
-                                                                                                if if__statement == if___statement:
-                                                                                                    if if__statement == if___statement:
-                                                                                                        if if__statement == if___statement:
-                                                                                                            if if__statement == if___statement:
-                                                                                                                if if__statement == if___statement:
-                                                                                                                    if if__statement == if___statement:
-                                                                                                                        if if__statement == if___statement:
-                                                                                                                            if if__statement == if___statement:
-                                                                                                                                if if__statement == if___statement:
-                                                                                                                                    if if__statement == if___statement:
-                                                                                                                                        if if__statement == if___statement:
-                                                                                                                                            if if__statement == if___statement:
-                                                                                                                                                if if__statement == if___statement:
-                                                                                                                                                    if if__statement == if___statement:
-                                                                                                                                                        if if__statement == if___statement:
-                                                                                                                                                            if if__statement == if___statement:
-                                                                                                                                                                if if__statement == if___statement:
-                                                                                                                                                                    if if__statement == if___statement:
-                                                                                                                                                                        if if__statement == if___statement:
-                                                                                                                                                                            if if__statement == if___statement:
-                                                                                                                                                                                if if__statement == if___statement:
-                                                                                                                                                                                    if if__statement == if___statement:
-                                                                                                                                                                                        if if__statement == if___statement:
-                                                                                                                                                                                            if if__statement == if___statement:
-                                                                                                                                                                                                if if__statement == if___statement:
-                                                                                                                                                                                                    if if__statement == if___statement:
-                                                                                                                                                                                                        if if__statement == if___statement:
-                                                                                                                                                                                                            if if__statement == if___statement:
-                                                                                                                                                                                                                if if__statement == if___statement:
-                                                                                                                                                                                                                    if__statement == if___statement
-
-            
-            else:
-                if___statement = if__statement 
-        """)
 
 #CAPA
 top_quad = Classroom("Top Quad")
@@ -195,8 +128,6 @@ current_classroom = top_quad
 DEAD = False
 while DEAD is False:
     print("\n")
-    if____statement()
-    clear_console()
     current_classroom.get_details()
     inhabited = current_classroom.get_character()
     if inhabited is not None:
@@ -218,5 +149,5 @@ while DEAD is False:
                 DEAD = True
         else:
             print("There is no one here to fight with.")
-
-    
+    if current_classroom == hall_entrance:
+        print("ok")
