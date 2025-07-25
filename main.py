@@ -44,11 +44,11 @@ audio_rack = Classroom("Audio Rack")
 audio_rack.set_description("Where Mr cole and Mr Brooks work their magic")
 stage_right = Classroom("Stage Right")
 stage_right.set_description("Some performers emerge from here")
-stage = Classroom("The Stage")
+stage = Classroom("Stage")
 stage.set_description("Where the lecturn lays to rest")
 stage_left = Classroom("Stage left")
 stage_left.set_description("Otherwise known as On prompt")
-floor = Classroom("The Floor")
+floor = Classroom("Hall Floor")
 floor.set_description("Where PE plays their reindeer games")
 hall_entrance = Classroom("Hall Entrance")
 hall_entrance.set_description("The entrance to the hall with a weird door")
@@ -108,12 +108,22 @@ music_store_room.link_classrooms(h14, "North")
 h15.link_classrooms(music_store_room, "North")
 
 #HALL
-hall_entrance.link_classrooms(Classroom, "North")
-floor.link_classrooms(Classroom, "North")
-stage.link_classrooms(Classroom, "North")
-stage_right.link_classrooms(Classroom, "West")
-top_stage.link_classrooms(Classroom, "North")
-stage_left.link_classrooms(Classroom, "East")
+hall_entrance.link_classrooms(floor, "North")
+floor.link_classrooms(stage, "North")
+stage.link_classrooms(stage_right, "West")
+stage.link_classrooms(stage_left, "East")
+stage.link_classrooms(top_stage, "West")
+stage_right.link_classrooms(random_tables, "North")
+stage_right.link_classrooms(stage, "East")
+top_stage.link_classrooms(random_tables, "West")
+top_stage.link_classrooms(audio_rack, "East")
+top_stage.link_classrooms(stage, "South")
+stage_left.link_classrooms(stage, "West")
+stage_left.link_classrooms(audio_rack, "North")
+audio_rack.link_classrooms(stage_left, "South")
+audio_rack.link_classrooms(top_stage, "West")
+random_tables.link_classrooms(stage_right, "South")
+random_tables.link_classrooms(top_stage, "East")
 
 miss_earl = Enemy("Miss Earl", "A Scary Intimidating and Strict teacher")
 miss_earl.set_conversation("Hello Student what are you trying to do")
@@ -135,6 +145,12 @@ while DEAD is False:
     command = input("> ")
     if command in ["North", "East", "South", "West"]:
         current_classroom = current_classroom.move(command)
+    elif current_classroom := h15:
+        hallornah = input("Do you want to go to the hall? Yes or No").lower
+        if hallornah = 
+            current_classroom = hall_entrance
+        else:
+            print("okie dokie")
     elif command == "Talk":
         if inhabited is not None:
             inhabited.talk()

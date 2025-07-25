@@ -10,3 +10,6 @@ So then i spent the remainder of the lesson fixing everything and being sad but 
 My idea includes making more charcters like goodies, potential item drops and possibly a quest giver. Bradley gave me and idea for an inventory.
 18/06/2025 - i added the clear console command, i also made the npc sub class for quest and i added the mr cole as a character
 it was also really confusing when making it because i couldnt remember what actually to do
+25/07/2025 - Today i finished linking the hall to the main array of classrooms i also linked all the areas in the hall as well and came up with ideas for characters to add and quests to do.
+I will add mr cole, jarron and alec waterson in each of their places. Mr cole in his room, jarron in the audio rack and alec waterson in the middle room plugging leads into the sound desk.
+our job is to stop him and teach him to correct ways.
