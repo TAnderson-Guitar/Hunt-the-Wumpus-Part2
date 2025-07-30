@@ -13,3 +13,6 @@ it was also really confusing when making it because i couldnt remember what actu
 25/07/2025 - Today i finished linking the hall to the main array of classrooms i also linked all the areas in the hall as well and came up with ideas for characters to add and quests to do.
 I will add mr cole, jarron and alec waterson in each of their places. Mr cole in his room, jarron in the audio rack and alec waterson in the middle room plugging leads into the sound desk.
 our job is to stop him and teach him to correct ways.
+30/07/2025 - Today i added a quest type thing which means you need to teach alec waterson about entertainment to gain access to the hallI 
+I was really confused and my code still does not work but i know with enough trial and error it will work and link the hall to the main line
+Alec wasterson resides in the middle room practicing and he asks a stupid question. I also made my work limit way longer due to the dialouge being long

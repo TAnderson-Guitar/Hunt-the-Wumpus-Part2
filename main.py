@@ -97,6 +97,8 @@ h11.link_classrooms(art_storeroom, "West")
 h11.link_classrooms(staffroom, "East")
 staffroom.link_classrooms(hallway, "East")
 staffroom.link_classrooms(h11, "West")
+h12.link_classrooms(hallway, "South")
+middle_room.link_classrooms(hallway, "West")
 hallway.link_classrooms(h12, "North")
 hallway.link_classrooms(middle_room, "East")
 hallway.link_classrooms(h12, "North")
@@ -130,6 +132,11 @@ miss_earl.set_conversation("Hello Student what are you trying to do")
 miss_earl.set_weakness("Tall shelf")
 h10.set_character(miss_earl)
 
+alec = Npc("Alec", "A student who is mediocre at best, at playing guitar and a lil stupid")
+alec.set_conversation("Should i hold an unmuted mic right infront of the speaker?")
+middle_room.set_character(alec)
+
+
 mr_cole = Npc("Mr cole", "A teacher who guides students through the art of entertainment")
 mr_cole.set_conversation("Hello Student are you working hard or hardly working")
 h15.set_character(mr_cole)
@@ -139,21 +146,34 @@ DEAD = False
 while DEAD is False:
     print("\n")
     current_classroom.get_details()
+    alec_learn = False
     inhabited = current_classroom.get_character()
     if inhabited is not None:
         inhabited.describe()
     command = input("> ")
     if command in ["North", "East", "South", "West"]:
         current_classroom = current_classroom.move(command)
-    elif current_classroom := h15:
-        hallornah = input("Do you want to go to the hall? Yes or No").lower
-        if hallornah = 
-            current_classroom = hall_entrance
+    elif current_classroom == h15:
+        hallornah = input("Do you want to go to the hall? (y/n) ").lower()
+        if hallornah == "yes":
+            if alec_learn:
+                print("omg alec is slightly more competant")
+                current_classroom = hall_entrance
+            else:
+                print("go teach alec right now")
         else:
-            print("okie dokie")
+            print("then dont be here")
+
     elif command == "Talk":
         if inhabited is not None:
             inhabited.talk()
+            if inhabited == alec and not alec_learn:
+                learn = input("Are you willing to teach alec waterson? (y/n) ").lower()
+                if learn == "yes":
+                    print("Alec has now learnt that putting an unmuted microphone infront of a speaker is not a good idea!!")
+                    alec_learn = True
+                else:
+                    print("Alec then proceeds to go deaf after creating infinite feedback")
     elif command == "Fight":
         if inhabited is not None and isinstance(inhabited, Enemy):
             fight_with = input("What do you want to fight with?")
