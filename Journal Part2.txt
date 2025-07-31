@@ -22,4 +22,7 @@ Which is like "teaching alec", "mixing lecturn", "mixing atem", "grabbing a box"
 I also completed most of the linking between everything due to a massive issue i just found and must be fixed as it would actually be really bad to keep in my code. 
 I also need to add something for the "fight" action as it has been mostly left in the dark these past days of coding. 
 I might research some ideas or like maybe it could be something about fending off the evil year 9s or making sure people dont go into the hall during capa.
-but anyway im not sure.
+but anyway im not sure. I later completed all the linking, I made an easter egg in the game. I also made a way to exit the game by completing all the quests
+I also made a way to see what you still need to complete by talking to mr cole. as he also describes where the place is to complete the quest so mr cole acts as an ancient monk quest giver
+and finally to finish off the day (11:56pm) made a way that shows the player that they have the box and can use it to fight her.
+1/08/2025

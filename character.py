@@ -51,6 +51,8 @@ class Enemy(Character):
             print(self.name + " swallows you whole! You died.")
             return False
 
+
+
 class Npc(Character):
     """Defines attributes and methods for NPC objects"""
     def __init__(self, char_name, char_description):
