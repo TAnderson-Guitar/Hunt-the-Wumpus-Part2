@@ -3,11 +3,11 @@ import os
 from character import Enemy
 from character import Npc
 from classroom import Classroom
+from actions import show_action_prompts
 
-def clear_console():
-    """Clears console"""
-    os.system('cls' if os.name == 'nt' else 'clear')
-
+game_state = {
+    "dead": False, "alec_learn": False, "mixed_audio1": False, "mixed_audio2": False, "picked_up_box": False,
+}
 
 #CAPA
 top_quad = Classroom("Top Quad")
@@ -86,50 +86,75 @@ white_car = Classroom("Mr whites car")
 white_car.set_description("Nothing actually happens here.")
 
 #CAPA
-top_quad.link_classrooms(h9, "North")
-h9.link_classrooms(top_quad, "South")
-h9.link_classrooms(h10, "East")
-h10.link_classrooms(h9, "West")
-h10.link_classrooms(art_storeroom, "East")
-art_storeroom.link_classrooms(h10, "West")
-art_storeroom.link_classrooms(h11, "East")
-h11.link_classrooms(art_storeroom, "West")
-h11.link_classrooms(staffroom, "East")
-staffroom.link_classrooms(hallway, "East")
-staffroom.link_classrooms(h11, "West")
-h12.link_classrooms(hallway, "South")
-middle_room.link_classrooms(hallway, "West")
-hallway.link_classrooms(h12, "North")
-hallway.link_classrooms(middle_room, "East")
-hallway.link_classrooms(h12, "North")
-hallway.link_classrooms(h14, "South")
-h14.link_classrooms(hallway, "North")
-h14.link_classrooms(music_store_room, "South")
-music_store_room.link_classrooms(h15, "South")
-music_store_room.link_classrooms(h14, "North")
-h15.link_classrooms(music_store_room, "North")
+top_quad.link_classrooms(h9, "north")
+h9.link_classrooms(top_quad, "south")
+h9.link_classrooms(h10, "east")
+h10.link_classrooms(h9, "west")
+h10.link_classrooms(art_storeroom, "east")
+art_storeroom.link_classrooms(h10, "west")
+art_storeroom.link_classrooms(h11, "east")
+h11.link_classrooms(art_storeroom, "west")
+h11.link_classrooms(staffroom, "east")
+staffroom.link_classrooms(hallway, "east")
+staffroom.link_classrooms(h11, "west")
+h12.link_classrooms(hallway, "south")
+middle_room.link_classrooms(hallway, "west")
+hallway.link_classrooms(h12, "north")
+hallway.link_classrooms(middle_room, "east")
+hallway.link_classrooms(h12, "north")
+hallway.link_classrooms(h14, "south")
+h14.link_classrooms(hallway, "north")
+h14.link_classrooms(music_store_room, "south")
+music_store_room.link_classrooms(h15, "south")
+music_store_room.link_classrooms(h14, "north")
+h15.link_classrooms(music_store_room, "north")
+h15.link_classrooms(hall_entrance, "south")
+hall_entrance.link_classrooms(h15, "north")
 
 #HALL
-hall_entrance.link_classrooms(floor, "North")
-floor.link_classrooms(stage, "North")
-stage.link_classrooms(stage_right, "West")
-stage.link_classrooms(stage_left, "East")
-stage.link_classrooms(top_stage, "West")
-stage_right.link_classrooms(random_tables, "North")
-stage_right.link_classrooms(stage, "East")
-top_stage.link_classrooms(random_tables, "West")
-top_stage.link_classrooms(audio_rack, "East")
-top_stage.link_classrooms(stage, "South")
-stage_left.link_classrooms(stage, "West")
-stage_left.link_classrooms(audio_rack, "North")
-audio_rack.link_classrooms(stage_left, "South")
-audio_rack.link_classrooms(top_stage, "West")
-random_tables.link_classrooms(stage_right, "South")
-random_tables.link_classrooms(top_stage, "East")
+hall_entrance.link_classrooms(floor, "north")
+floor.link_classrooms(stage, "north")
+stage.link_classrooms(stage_right, "west")
+stage.link_classrooms(stage_left, "east")
+stage.link_classrooms(top_stage, "north")
+stage.link_classrooms(floor, "south")
+stage_right.link_classrooms(random_tables, "north")
+stage_right.link_classrooms(stage, "east")
+top_stage.link_classrooms(random_tables, "west")
+top_stage.link_classrooms(audio_rack, "east")
+top_stage.link_classrooms(stage, "south")
+stage_left.link_classrooms(stage, "west")
+stage_left.link_classrooms(audio_rack, "north")
+audio_rack.link_classrooms(stage_left, "south")
+audio_rack.link_classrooms(top_stage, "west")
+random_tables.link_classrooms(stage_right, "south")
+random_tables.link_classrooms(top_stage, "east")
+hall_entrance.link_classrooms(teacher_car_park, "east")
+teacher_car_park.link_classrooms(hall_entrance, "west")
+
+#carpark
+h15.link_classrooms(teacher_car_park, "east")
+teacher_car_park.link_classrooms(h15, "north")
+teacher_car_park.link_classrooms(floor_3, "east")
+floor_1.link_classrooms(cole_car, "east")
+floor_2.link_classrooms(school_exit, "east")
+floor_3.link_classrooms(beaty_car, "east")
+floor_4.link_classrooms(earl_car, "east")
+floor_5.link_classrooms(white_car, "east")
+floor_1.link_classrooms(floor_2, "south")
+floor_2.link_classrooms(floor_3, "south")
+floor_3.link_classrooms(floor_4, "south")
+floor_4.link_classrooms(floor_5, "south")
+floor_5.link_classrooms(floor_4, "north")
+floor_4.link_classrooms(floor_3, "north")
+floor_3.link_classrooms(floor_2, "north")
+floor_2.link_classrooms(floor_1, "north")
+floor_3.link_classrooms(teacher_car_park, "west")
+
 
 miss_earl = Enemy("Miss Earl", "A Scary Intimidating and Strict teacher")
 miss_earl.set_conversation("Hello Student what are you trying to do")
-miss_earl.set_weakness("Tall shelf")
+miss_earl.set_weakness("tall shelf")
 h10.set_character(miss_earl)
 
 alec = Npc("Alec", "A student who is mediocre at best, at playing guitar and a lil stupid")
@@ -142,39 +167,69 @@ mr_cole.set_conversation("Hello Student are you working hard or hardly working")
 h15.set_character(mr_cole)
 
 current_classroom = top_quad
-DEAD = False
-while DEAD is False:
+while not game_state["dead"]:
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("\n")
     current_classroom.get_details()
-    alec_learn = False
     inhabited = current_classroom.get_character()
     if inhabited is not None:
         inhabited.describe()
-    command = input("> ")
-    if command in ["North", "East", "South", "West"]:
+    show_action_prompts(current_classroom, game_state, inhabited)
+    command = input("> ").lower()
+    if command in ["north", "east", "south", "west"]:
         current_classroom = current_classroom.move(command)
-    elif current_classroom == h15:
-        hallornah = input("Do you want to go to the hall? (y/n) ").lower()
-        if hallornah == "yes":
-            if alec_learn:
-                print("omg alec is slightly more competant")
-                current_classroom = hall_entrance
-            else:
-                print("go teach alec right now")
-        else:
-            print("then dont be here")
-
-    elif command == "Talk":
+    elif command == "quests":
+        print("Quests to be completed")
+        print(f"- Teach Alec: {'1/1' if game_state['alec_learn'] else '0/1'}")
+        print(f"- Mix Lectern: {'1/1' if game_state['mixed_audio1'] else '0/1'}")
+        print(f"- Mix ATEM: {'1/1' if game_state['mixed_audio2'] else '0/1'}")
+        print(f"- Picked Up Box: {'1/1' if game_state['picked_up_box'] else '0/1'}")
+        input("\nPress Enter to continue...")
+    elif command == "talk":
         if inhabited is not None:
             inhabited.talk()
-            if inhabited == alec and not alec_learn:
-                learn = input("Are you willing to teach alec waterson? (y/n) ").lower()
-                if learn == "yes":
-                    print("Alec has now learnt that putting an unmuted microphone infront of a speaker is not a good idea!!")
-                    alec_learn = True
+            if inhabited == alec and not game_state["alec_learn"]:
+                learn = input("Should alec put a mic infront of an unmuted speaker? (y/n) ").lower()
+                if learn == "no":
+                    print("Alright now go ask mr cole to go to the hall while in his room")
+                    game_state["alec_learn"] = True
                 else:
                     print("Alec then proceeds to go deaf after creating infinite feedback")
-    elif command == "Fight":
+        if inhabited == mr_cole:
+            if game_state["mixed_audio1"] and game_state["mixed_audio2"] and game_state["picked_up_box"] and game_state["alec_learn"]:
+                print("You are finally competent.")
+                print("and you have setup for CAPA Showcase")
+                DEAD = True
+            elif not game_state["mixed_audio1"]:
+                print("Why does the hall sound like theres no lecturn?")
+            elif not game_state["mixed_audio2"]:
+                print("Why does the hall sound like theres no atem?")
+            elif not game_state["picked_up_box"]:
+                print("Where is the box?")
+    elif command == "mix" and current_classroom == audio_rack:
+        print("You have made it to the mixing desk now you must complete this mixing challenge")
+        print("Type '1' to unmute Wireless Mic 1")
+        print("Type '2' to unmute Lectern")
+        print("Type '3' to unmute the ATEM")
+        mixing_choice = input("Choose wisely (1/2/3): ")
+
+        if mixing_choice == "1":
+            print("Wireless Mic 1 causes a loud burst of feedback. Everyone winces.")
+            print("You are so foolish bro what r u doing")
+            game_state["dead"] = True
+        elif mixing_choice == "2":
+            print("The Lectern is now correctly unmuted")
+            game_state["mixed_audio1"] = True
+        elif mixing_choice == "3":
+            print("The ATEM is now correctly unmuted")
+            game_state["mixed_audio2"] = True
+        else:
+            print("Everyone in a 100m radius just died because of you")
+            game_state["dead"] = True
+    elif command == "pickup box" and current_classroom == cole_car:
+        print("You have now collected the carboard box, good job bro")
+        game_state["picked_up_box"] = True
+    elif command == "fight":
         if inhabited is not None and isinstance(inhabited, Enemy):
             fight_with = input("What do you want to fight with?")
             if inhabited.fight(fight_with) is True:
@@ -182,7 +237,7 @@ while DEAD is False:
                 current_classroom.set_character(None)
             else:
                 print("Scurry home. You lost the fight")
-                DEAD = True
+                game_state["dead"] = True
         else:
             print("There is no one here to fight with.")
     if current_classroom == hall_entrance:

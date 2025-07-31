@@ -16,3 +16,10 @@ our job is to stop him and teach him to correct ways.
 30/07/2025 - Today i added a quest type thing which means you need to teach alec waterson about entertainment to gain access to the hallI 
 I was really confused and my code still does not work but i know with enough trial and error it will work and link the hall to the main line
 Alec wasterson resides in the middle room practicing and he asks a stupid question. I also made my work limit way longer due to the dialouge being long
+31/07/2025 - I added so much today, i added an "actions" file to see what you can actually do in the game. including "mix", "talk", "grab the box" and "fight" i think. 
+I used some ai for some like unfixable issues which were resolved quickly. I also added a quests page where you can see what is needed to be done. 
+Which is like "teaching alec", "mixing lecturn", "mixing atem", "grabbing a box". all of these must be completed to then beat the game. 
+I also completed most of the linking between everything due to a massive issue i just found and must be fixed as it would actually be really bad to keep in my code. 
+I also need to add something for the "fight" action as it has been mostly left in the dark these past days of coding. 
+I might research some ideas or like maybe it could be something about fending off the evil year 9s or making sure people dont go into the hall during capa.
+but anyway im not sure.
