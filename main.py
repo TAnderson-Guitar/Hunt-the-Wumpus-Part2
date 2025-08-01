@@ -160,7 +160,18 @@ earl_car.link_classrooms(beaty_car, "north")
 beaty_car.link_classrooms(school_exit, "north")
 school_exit.link_classrooms(cole_car, "north")
 
+miss_rod = Npc("Miss Rodriguez", "A Music teacher who resides in H12 and teaches music")
+miss_rod.set_conversation("Hello student, how many sharps in the key of C Major?")
+h12.set_character(miss_rod)
 
+mr_ward = Npc("Mr Ward", "A Music teacher who resides in H14 and teaches music")
+mr_ward.set_conversation("Did you know im in a band called 'Elara' and I play at your locals?")
+h14.set_character(mr_ward)
+
+mr_wong = Npc("Mr Wong", "he usually doesnt say stuff that makes sense, ever.")
+mr_wong.set_conversation("The bamboo brushes painted existential tofu onto the canvas of time," \
+" while the origami unicorn recited Picasso's grocery list in Mandarin.")
+h11.set_character(mr_wong)
 
 miss_earl = Enemy("Miss Earl", "A Scary Intimidating and Strict teacher")
 miss_earl.set_conversation("Hello Student what are you trying to do")
@@ -168,7 +179,7 @@ miss_earl.set_weakness("tall shelf")
 h10.set_character(miss_earl)
 
 alec = Npc("Alec", "A student who is mediocre at best, at playing guitar and a lil stupid")
-alec.set_conversation("Should i hold an unmuted mic right infront of the speaker?")
+alec.set_conversation("Does anyone know what the high pitched ringing sound is?")
 middle_room.set_character(alec)
 
 
@@ -179,7 +190,14 @@ h15.set_character(mr_cole)
 current_classroom = top_quad
 while not game_state["dead"]:
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("\n")
+    if current_classroom == top_quad:
+        print("\n")
+        print("Ah yes... another bump in for the Capa Showcase")
+        print("Mr. Cole is watchin everything. Alec is clueless as always. Miss Earl is terrifying.")
+        print("Start your journey by heading East towards the music rooms.")
+        print("Once you reach the hallway take a turn south and talk to Mr Cole")
+        print("WARNING: DO NOT TALK TO MISS EARL")
+        print("You start in the Top Quad, now get moving!")
     current_classroom.get_details()
     inhabited = current_classroom.get_character()
     if inhabited is not None:
@@ -198,31 +216,45 @@ while not game_state["dead"]:
     elif command == "talk":
         if inhabited is not None:
             inhabited.talk()
-            if inhabited == alec and not game_state["alec_learn"]:
-                learn = input("Should alec put a mic infront of an unmuted speaker? (y/n) ").lower()
-                if learn == "no":
-                    print("You have correctly taught alec waterson")
-                    input("\nPress Enter to continue...")
-                    game_state["alec_learn"] = True
-                else:
-                    print("Alec then proceeds to go deaf after creating infinite feedback killing everyone in capa")
-                    game_state["dead"] = True
+            input("\nPress Enter to continue...")
         if inhabited == mr_cole:
             if game_state["mixed_audio1"] and game_state["mixed_audio2"] and game_state["picked_up_box"] and game_state["alec_learn"]:
                 print("You are finally competent.")
                 print("and you have setup for CAPA Showcase")
                 game_state["dead"] = True
             elif not game_state["alec_learn"]:
-                print("Go teach alec in the middle room about entertainment")
+                print("Go teach alec in the middle room about entertainment. Hint: (Check capa progress for more info)")
                 input("\nPress Enter to continue...")
             elif not game_state["mixed_audio1"]:
-                print("Why does the hall sound like theres no lecturn?")
+                print("Why does the hall sound like theres no lecturn? Hint: (Check capa progress for more info)")
                 input("\nPress Enter to continue...")
             elif not game_state["mixed_audio2"]:
-                print("Why does the hall sound like theres no atem?")
+                print("Why does the hall sound like theres no atem? Hint: (Check capa progress for more info)")
                 input("\nPress Enter to continue...")
             elif not game_state["picked_up_box"]:
-                print("Where is the box?")
+                print("Where is the box. Hint: (Check capa progress for more info)")
+                input("\nPress Enter to continue...")
+    elif command == "teach alec" and current_classroom == middle_room:
+        if inhabited == alec and not game_state["alec_learn"]:
+            learn = input("Should alec put a mic infront of an unmuted speaker? (y/n) ").lower()
+            if learn == "no":
+                print("You have correctly taught alec waterson")
+                input("\nPress Enter to continue...")
+                game_state["alec_learn"] = True
+            else:
+                print("Alec then proceeds to go deaf after creating infinite feedback killing everyone in capa")
+                game_state["dead"] = True
+    elif command == "capa progress" and current_classroom == h15:
+        if inhabited == mr_cole and current_classroom == h15:
+            print("Quests to be completed")
+            if game_state['alec_learn'] is False:
+                print("- Go North towards the Middle Room and teach Alec about microphones")
+            if game_state['mixed_audio1'] is False:
+                print("- Go South towards the Audio Rack in the hall and mix the lecturn by clicking 1 2 or 3")
+            if game_state['mixed_audio2'] is False:
+                print("- Go South towards the Audio Rack in the hall and mix the ATEM by clicking 1 2 or 3")
+            if game_state['picked_up_box'] is False:
+                print("- Go East towards the Teacher Car Park and pick up the carboard box from my Car")
                 input("\nPress Enter to continue...")
     elif command == "mix" and current_classroom == audio_rack:
         print("You have made it to the mixing desk now you must complete this mixing challenge")

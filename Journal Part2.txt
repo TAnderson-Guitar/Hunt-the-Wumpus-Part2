@@ -25,4 +25,9 @@ I might research some ideas or like maybe it could be something about fending of
 but anyway im not sure. I later completed all the linking, I made an easter egg in the game. I also made a way to exit the game by completing all the quests
 I also made a way to see what you still need to complete by talking to mr cole. as he also describes where the place is to complete the quest so mr cole acts as an ancient monk quest giver
 and finally to finish off the day (11:56pm) made a way that shows the player that they have the box and can use it to fight her.
-1/08/2025
+1/08/2025 - This final day is when i need to lock in. ive made a capa progress input command that lists everything that needs to be completed as well as includs a description of each task
+Then i created more characters to fill the game up, like the teachers in their rooms. Mr Ward, Mr Wong and Miss Rodreiguiz they all have their unique dialouge. 
+I also slightly altered the talk function to make it work for my code, as I have the clear console function, it stops the user from being able to read the dialouge.
+I added it which allows the player to read it at their own pace, further increasing the players enjoyment. (12:18) I have now made those descriptions more descriptive
+I also created a message at the start of the game to give the player a little breif, but it also tells the player to go to Mr Cole as well as warns the player of Miss earl
+Now its time to complete my documentation

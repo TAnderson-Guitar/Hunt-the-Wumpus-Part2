@@ -1,4 +1,6 @@
+"""The document that detects the players quests"""
 def show_action_prompts(location, game_state, character):
+    """Creates the function to show the quests that need to be done. It allows the player to see their progress in the game"""
     prompts = []
     if game_state["alec_learn"] is False or game_state["mixed_audio1"] is False or game_state["mixed_audio2"] is False or game_state["picked_up_box"] is False:
         prompts.append("Type 'quests' to see your quests to complete.")
@@ -8,6 +10,10 @@ def show_action_prompts(location, game_state, character):
         prompts.append("Type 'pickup box' to grab the box out of Cole car.")
     if getattr(character, "name", "") == "Miss Earl" and not game_state["defeated_miss_earl"]:
         prompts.append("Type 'fight' to fight whoever is in the room with you.")
+    if getattr(location, "name", "") == "Middle Room" and not game_state["alec_learn"]:
+        prompts.append("Type 'teach alec' to properly teach alec.")
+    if getattr(location, "name", "") == "Cole's Room":
+        prompts.append("Type 'capa progress' to see what you must complete")
     if character is not None:
         prompts.append(f"Type 'talk' to interact with {character.name}.")
     for p in prompts:
